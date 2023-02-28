@@ -48,7 +48,7 @@ def activateEmail(request, user, to_email):
     subject = 'Please Activate Your Account'
     uid= urlsafe_base64_encode(force_bytes(user['id'])),
     token = account_activation_token.make_token(user),
-    from_email = 'zicklerchristopher@gmail.com'
+    from_email = ''
     for i in uid:
         u_id = i 
     for j in token:
@@ -69,7 +69,7 @@ def ResendactivateEmail(request):
     subject = 'Please Activate Your Account'
     uid= urlsafe_base64_encode(force_bytes(user_serializer.data['id'])),
     token = account_activation_token.make_token(user_serializer.data),
-    from_email = 'zicklerchristopher@gmail.com'
+    from_email = ''
     to_email = str(user_serializer.data['email'])
     print(to_email)
     for i in uid:
