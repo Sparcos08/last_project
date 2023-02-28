@@ -44,7 +44,7 @@ def InviteEmployee(request):
     print(request.data)
     subject = 'Invitation to join us!'
     from_email = request.data['email']
-    to_email = 'mohamedaziz.chibani0@gmail.com'
+    to_email = ''
     message = 'ya3tk 3asba you have a new mail from '+ request.data['email']
     send_mail(subject, message, from_email, [to_email], fail_silently=False)
     return Response('zabb 3lik')
